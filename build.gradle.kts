@@ -20,7 +20,7 @@ allprojects {
 }
 
 tasks {
-    "clean"(Delete::class) {
+    create("clean", Delete::class) {
         delete(rootProject.buildDir)
     }
 }
