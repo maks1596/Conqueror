@@ -1,2 +1,2 @@
-include(":app", ":model")
+include(":app", ":presentation", ":model")
 rootProject.name = "Conqueror"
