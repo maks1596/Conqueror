@@ -1,22 +1,46 @@
 package com.example.conqueror
 
+import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
-import com.example.model.Squad
+import androidx.recyclerview.widget.DiffUtil
+import com.example.conqueror.databinding.RecyclerViewBinding
+import com.example.conqueror.util.viewBinding
 import com.example.presentation.MainContract
+import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
+import java.util.*
 
 class MainFragment :
-    Fragment(R.layout.main_fragment),
+    Fragment(R.layout.recycler_view),
     MainContract.View {
 
-    override fun displayPopulation(population: Int) {
-        TODO("Not yet implemented")
+    private val binding by viewBinding(RecyclerViewBinding::bind)
+
+    private val adapter by lazy {
+        AsyncListDifferDelegationAdapter(
+            object : DiffUtil.ItemCallback<Any>() {
+                override fun areItemsTheSame(oldItem: Any, newItem: Any) = oldItem === newItem
+
+                override fun areContentsTheSame(oldItem: Any, newItem: Any) =
+                    Objects.equals(oldItem, newItem)
+
+            },
+            KingdomState.AdapterDelegateFactory.create()
+        )
     }
 
-    override fun displayBalance(balance: Int) {
-        TODO("Not yet implemented")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.recyclerView.adapter = adapter
     }
 
-    override fun displaySquads(availableSquads: List<Squad>, unavailableSquads: List<Squad>) {
-        TODO("Not yet implemented")
+    override fun displayState(state: MainContract.State) {
+        adapter.items = listOf(
+            KingdomState.ListItem(
+                population = state.population,
+                balance = state.balance
+            )
+        )
     }
 }

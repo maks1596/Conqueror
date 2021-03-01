@@ -8,18 +8,18 @@ import com.example.model.Squad
 sealed class MainContract {
 
     interface View {
-        fun displayPopulation(population: Int)
-
-        fun displayBalance(balance: Int)
-
-        fun displaySquads(
-            availableSquads: List<Squad>,
-            unavailableSquads: List<Squad>
-        )
+        fun displayState(state: State)
     }
 
     interface Presenter {
 
         fun onViewCreated()
     }
+
+    class State(
+        val population: Int,
+        val balance: Int,
+        val availableSquads: List<Squad>,
+        val unavailableSquads: List<Squad>
+    )
 }
