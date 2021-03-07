@@ -1,5 +1,6 @@
 package com.example.conqueror.di
 
+import androidx.fragment.app.FragmentFactory
 import com.example.conqueror.App
 import dagger.BindsInstance
 import dagger.Component
@@ -14,13 +15,13 @@ import dagger.android.AndroidInjector
         MainModule::class
     ]
 )
-internal interface AppComponent : AndroidInjector<App> {
+internal interface AppComponent {
 
-    override fun inject(application: App)
+    val fragmentFactory: FragmentFactory
 
     @Component.Factory
     interface Factory {
 
-        fun create(@BindsInstance application: App): AppComponent
+        fun create(): AppComponent
     }
 }
