@@ -11,9 +11,16 @@ import dagger.Provides
 internal class MainModule {
 
     @Provides
+    fun provideFragment(
+        presenterProvider: Lazy<MainContract.Presenter>
+    ) = MainFragment(
+        getPresenter = presenterProvider::get
+    )
+
+    @Provides
     fun providePresenter(
         fragmentProvider: Lazy<MainFragment>
     ): MainContract.Presenter = MainPresenter(
-        provideView = fragmentProvider::get
+        getView = fragmentProvider::get
     )
 }
