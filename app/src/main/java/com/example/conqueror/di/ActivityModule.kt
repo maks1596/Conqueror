@@ -1,6 +1,7 @@
 package com.example.conqueror.di
 
 import com.example.conqueror.MainActivity
+import com.example.conqueror.di.main.MainActivityModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

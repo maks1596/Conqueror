@@ -1,4 +1,4 @@
-package com.example.conqueror.di
+package com.example.conqueror.di.main
 
 import com.example.conqueror.MainFragment
 import com.example.presentation.MainContract

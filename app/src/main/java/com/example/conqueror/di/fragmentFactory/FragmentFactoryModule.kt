@@ -1,4 +1,4 @@
-package com.example.conqueror.di
+package com.example.conqueror.di.fragmentFactory
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
