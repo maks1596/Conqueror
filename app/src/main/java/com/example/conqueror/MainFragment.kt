@@ -9,9 +9,11 @@ import com.example.conqueror.util.viewBinding
 import com.example.presentation.MainContract
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import java.util.*
+import javax.inject.Inject
 
-class MainFragment :
-    Fragment(R.layout.recycler_view),
+class MainFragment @Inject constructor(
+    private val presenter: MainContract.Presenter
+) : Fragment(R.layout.recycler_view),
     MainContract.View {
 
     private val binding by viewBinding(RecyclerViewBinding::bind)
@@ -33,6 +35,7 @@ class MainFragment :
         super.onViewCreated(view, savedInstanceState)
 
         binding.recyclerView.adapter = adapter
+        presenter.onViewCreated()
     }
 
     override fun displayState(state: MainContract.State) {
