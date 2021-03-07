@@ -1,4 +1,4 @@
-package com.example.conqueror
+package com.example.ui
 
 import androidx.appcompat.app.AppCompatActivity
 

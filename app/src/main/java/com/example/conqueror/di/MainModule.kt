@@ -1,10 +1,10 @@
 package com.example.conqueror.di
 
 import androidx.fragment.app.Fragment
-import com.example.conqueror.MainFragment
 import com.example.conqueror.di.fragmentFactory.FragmentKey
 import com.example.presentation.MainContract
 import com.example.presentation.impl.MainPresenter
+import com.example.ui.main.MainFragment
 import dagger.Binds
 import dagger.Lazy
 import dagger.Module
@@ -15,7 +15,7 @@ import dagger.multibindings.IntoMap
 internal abstract class MainModule {
 
     companion object {
-        
+
         @Provides
         fun provideFragment(
             presenterProvider: Lazy<MainContract.Presenter>

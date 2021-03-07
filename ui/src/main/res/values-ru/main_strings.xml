@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public />
+
+    <string name="kingdom_balance_format">Монет: %1$d</string>
+    <string name="kingdom_population_format">Население: %1$d</string>
+</resources>

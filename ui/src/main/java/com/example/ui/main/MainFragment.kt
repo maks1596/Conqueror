@@ -1,12 +1,13 @@
-package com.example.conqueror
+package com.example.ui.main
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DiffUtil
-import com.example.conqueror.databinding.RecyclerViewBinding
-import com.example.conqueror.util.viewBinding
 import com.example.presentation.MainContract
+import com.example.ui.R
+import com.example.ui.databinding.RecyclerViewBinding
+import com.example.ui.util.viewBinding
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import java.util.*
 

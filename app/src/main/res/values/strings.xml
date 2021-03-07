@@ -1,6 +1,3 @@
 <resources>
     <string name="app_name">Conqueror</string>
-
-    <string name="kingdom_balance_format">Money: %1$d</string>
-    <string name="kingdom_population_format">Population: %1$d</string>
 </resources>

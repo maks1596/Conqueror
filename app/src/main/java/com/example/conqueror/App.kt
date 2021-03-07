@@ -7,8 +7,6 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentFactory
 import com.example.conqueror.di.DaggerAppComponent
 import com.example.conqueror.util.EmptyActivityLifecycleCallbacks
-import dagger.android.AndroidInjector
-import dagger.android.DaggerApplication
 
 internal class App : Application() {
 
@@ -19,9 +17,11 @@ internal class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        registerActivityLifecycleCallbacks(InjectFragmentFactoryActivityLifecycleCallbacks(
-            component.fragmentFactory
-        ))
+        registerActivityLifecycleCallbacks(
+            InjectFragmentFactoryActivityLifecycleCallbacks(
+                component.fragmentFactory
+            )
+        )
     }
 
     private class InjectFragmentFactoryActivityLifecycleCallbacks(

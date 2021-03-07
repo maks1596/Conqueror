@@ -1,6 +1,7 @@
-package com.example.conqueror
+package com.example.ui.main
 
-import com.example.conqueror.databinding.KingdomStateBinding
+import com.example.ui.R
+import com.example.ui.databinding.KingdomStateBinding
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
 /**

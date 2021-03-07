@@ -6,5 +6,5 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.conqueror.MainFragment" />
+        android:name="com.example.ui.main.MainFragment" />
 </navigation>

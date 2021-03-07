@@ -1,4 +1,4 @@
-package com.example.conqueror.util
+package com.example.ui.util
 
 import android.view.View
 import androidx.fragment.app.Fragment

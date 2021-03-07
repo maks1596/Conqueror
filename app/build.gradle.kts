@@ -17,10 +17,6 @@ android {
         versionName = "1.0"
     }
 
-    buildFeatures {
-        viewBinding = true
-    }
-
     buildTypes {
         getByName("release") {
             minifyEnabled(false)
@@ -40,21 +36,14 @@ android {
 }
 
 dependencies {
+    implementation(project(":ui"))
     implementation(project(":presentation"))
     implementation(project(":presentation-impl"))
 
     implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("com.google.android.material:material:1.3.0")
-    implementation("androidx.lifecycle:lifecycle-common-java8:2.3.0")
 
-
-    val adapterDelegateVersion = "4.3.0"
-    implementation("com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapterDelegateVersion")
-    implementation("com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapterDelegateVersion")
-
-    val navVersion = "2.3.3"
-    implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
-    implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+    val materialVersion: String by rootProject.ext
+    implementation("com.google.android.material:material:$materialVersion")
 
     val daggerVersion = "2.33"
     implementation("com.google.dagger:dagger:$daggerVersion")
