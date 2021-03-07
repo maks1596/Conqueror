@@ -5,16 +5,24 @@ import androidx.fragment.app.FragmentFactory
 import com.example.conqueror.MainFragment
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.multibindings.IntoMap
+import javax.inject.Provider
 
 @Module
-internal interface FragmentFactoryModule {
+internal abstract class FragmentFactoryModule {
+
+    companion object {
+
+        @Provides
+        fun provideFragmentFactory(
+            providers: Map<Class<out Fragment>, @JvmSuppressWildcards Provider<Fragment>>
+        ): FragmentFactory = InjectFragmentFactory(providers)
+    }
 
     @Binds
     @IntoMap
     @FragmentKey(MainFragment::class)
-    fun bindMainFragment(mainFragment: MainFragment): Fragment
+    abstract fun bindMainFragment(mainFragment: MainFragment): Fragment
 
-    @Binds
-    fun bindFragmentFactory(fragmentFactory: InjectFragmentFactory): FragmentFactory
 }

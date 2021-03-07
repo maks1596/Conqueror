@@ -2,11 +2,10 @@ package com.example.conqueror.di
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
-import javax.inject.Inject
 import javax.inject.Provider
 
-internal class InjectFragmentFactory @Inject constructor(
-    private val providers: Map<Class<out Fragment>, @JvmSuppressWildcards Provider<Fragment>>
+internal class InjectFragmentFactory(
+    private val providers: Map<Class<out Fragment>, Provider<Fragment>>
 ) : FragmentFactory() {
 
     override fun instantiate(classLoader: ClassLoader, className: String): Fragment {
