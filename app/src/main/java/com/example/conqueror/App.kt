@@ -3,10 +3,10 @@ package com.example.conqueror
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentFactory
+import com.example.conqueror.di.AppComponent
 import com.example.conqueror.di.DaggerAppComponent
 import com.example.conqueror.util.EmptyActivityLifecycleCallbacks
+import com.example.ui.MainActivity
 
 internal class App : Application() {
 
@@ -18,19 +18,24 @@ internal class App : Application() {
         super.onCreate()
 
         registerActivityLifecycleCallbacks(
-            InjectFragmentFactoryActivityLifecycleCallbacks(
-                component.fragmentFactory
-            )
+            InjectFragmentFactoryActivityLifecycleCallbacks { component }
         )
     }
 
     private class InjectFragmentFactoryActivityLifecycleCallbacks(
-        private val fragmentFactory: FragmentFactory
+        private val getAppComponent: () -> AppComponent
     ) : EmptyActivityLifecycleCallbacks {
 
-        override fun onActivityPreCreated(activity: Activity, savedInstanceState: Bundle?) {
-            if (activity !is FragmentActivity) return
-            activity.supportFragmentManager.fragmentFactory = fragmentFactory
+        override fun onActivityPreCreated(
+            activity: Activity, savedInstanceState: Bundle?
+        ) = when (activity) {
+            is MainActivity -> {
+                val appComponent = getAppComponent()
+                val component = appComponent.mainActivityComponent
+                activity.supportFragmentManager.fragmentFactory = component.fragmentFactory
+            }
+
+            else -> Unit
         }
     }
 }

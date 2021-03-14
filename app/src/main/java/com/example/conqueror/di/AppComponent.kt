@@ -1,19 +1,14 @@
 package com.example.conqueror.di
 
-import androidx.fragment.app.FragmentFactory
-import com.example.conqueror.di.fragmentFactory.FragmentFactoryModule
+import com.example.conqueror.di.main.MainActivityComponent
+import com.example.conqueror.di.scope.AppScope
 import dagger.Component
-import dagger.android.AndroidInjectionModule
 
-@Component(
-    modules = [
-        AndroidInjectionModule::class,
-        FragmentFactoryModule::class
-    ]
-)
+@Component
+@AppScope
 internal interface AppComponent {
 
-    val fragmentFactory: FragmentFactory
+    val mainActivityComponent: MainActivityComponent
 
     @Component.Factory
     interface Factory {
