@@ -12,9 +12,11 @@ import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import java.util.*
 
 class MainFragment(
-    private val getPresenter: () -> MainContract.Presenter
+    private val getPresenter: (MainFragment) -> MainContract.Presenter
 ) : Fragment(R.layout.recycler_view),
     MainContract.View {
+
+    private val presenter get() = getPresenter(this)
 
     private val binding by viewBinding(RecyclerViewBinding::bind)
 
@@ -35,7 +37,7 @@ class MainFragment(
         super.onViewCreated(view, savedInstanceState)
 
         binding.recyclerView.adapter = adapter
-        getPresenter().onViewCreated()
+        presenter.onViewCreated()
     }
 
     override fun displayState(state: MainContract.State) {

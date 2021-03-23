@@ -3,7 +3,7 @@ package com.example.presentation.impl
 import com.example.presentation.MainContract
 
 class MainPresenter(
-    private val getView: () -> MainContract.View
+    private val view: MainContract.View
 ) : MainContract.Presenter {
 
     override fun onViewCreated() {
@@ -13,6 +13,6 @@ class MainPresenter(
             availableSquads = emptyList(),
             unavailableSquads = emptyList()
         )
-        getView().displayState(state)
+        view.displayState(state)
     }
 }
