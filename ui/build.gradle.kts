@@ -5,9 +5,9 @@ plugins {
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdk = 30
     defaultConfig {
-        minSdkVersion(22)
+        minSdk = 22
     }
 
     buildFeatures {
@@ -18,8 +18,8 @@ android {
 dependencies {
     implementation(project(":presentation"))
 
-    implementation("androidx.core:core-ktx:1.3.2")
-    implementation("androidx.lifecycle:lifecycle-common-java8:2.3.0")
+    implementation("androidx.core:core-ktx:1.6.0")
+    implementation("androidx.lifecycle:lifecycle-common-java8:2.3.1")
 
     val materialVersion: String by rootProject.ext
     implementation("com.google.android.material:material:$materialVersion")

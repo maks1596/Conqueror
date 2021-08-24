@@ -6,20 +6,20 @@ plugins {
 }
 
 android {
-    compileSdkVersion(30)
-    buildToolsVersion("30.0.1")
+    compileSdk = 30
+    buildToolsVersion = "30.0.3"
 
     defaultConfig {
         applicationId = "com.example.conqueror"
-        minSdkVersion(22)
-        targetSdkVersion(30)
+        minSdk = 22
+        targetSdk = 30
         versionCode = 1
         versionName = "1.0"
     }
 
     buildTypes {
         getByName("release") {
-            minifyEnabled(false)
+            isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
         }
     }
@@ -40,7 +40,7 @@ dependencies {
     implementation(project(":presentation"))
     implementation(project(":presentation-impl"))
 
-    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("androidx.appcompat:appcompat:1.3.1")
 
     val materialVersion: String by rootProject.ext
     implementation("com.google.android.material:material:$materialVersion")
