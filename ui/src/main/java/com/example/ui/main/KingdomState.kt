@@ -27,8 +27,19 @@ internal sealed class KingdomState {
         }
     }
 
+    /**
+     * Элемент списка для отображения состояния королевства в списке
+     */
     data class ListItem(
+
+        /**
+         * Количество населения в королевстве
+         */
         val population: Int,
+
+        /**
+         * Количество момент в казне королевства
+         */
         val balance: Int
     )
 }
