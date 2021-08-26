@@ -26,7 +26,7 @@ internal class App : Application() {
         private val getAppComponent: () -> AppComponent
     ) : EmptyActivityLifecycleCallbacks {
 
-        override fun onActivityPreCreated(
+        override fun onActivityCreated(
             activity: Activity, savedInstanceState: Bundle?
         ) = when (activity) {
             is MainActivity -> {
