@@ -10,6 +10,10 @@ android {
         minSdk = 22
     }
 
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
     buildFeatures {
         viewBinding = true
     }
@@ -31,4 +35,6 @@ dependencies {
     val navVersion = "2.3.3"
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+
+    implementation("com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.0-beta01")
 }
