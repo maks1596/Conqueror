@@ -8,5 +8,6 @@ java {
 }
 
 dependencies {
-    implementation(project(":model"))
+    val coroutinesCoreVersion: String by rootProject.extra
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCoreVersion")
 }

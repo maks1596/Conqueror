@@ -2,6 +2,7 @@ plugins {
     id("com.android.library")
 
     kotlin("android")
+    kotlin("kapt")
 }
 
 android {
@@ -20,10 +21,14 @@ android {
 }
 
 dependencies {
+    implementation(project(":model"))
     implementation(project(":presentation"))
 
     implementation("androidx.core:core-ktx:1.6.0")
-    implementation("androidx.lifecycle:lifecycle-common-java8:2.3.1")
+
+    val lifecycleVersion: String by rootProject.ext
+    kapt("androidx.lifecycle:lifecycle-compiler:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion")
 
     val materialVersion: String by rootProject.ext
     implementation("com.google.android.material:material:$materialVersion")

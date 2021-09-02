@@ -16,7 +16,7 @@ sealed class MainContract {
         fun onViewCreated()
     }
 
-    class State(
+    data class State(
         val population: Int,
         val balance: Int,
         val availableSquads: List<Squad>,

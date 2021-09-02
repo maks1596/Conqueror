@@ -18,7 +18,7 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
+        release {
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
         }
@@ -30,8 +30,7 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
-        useIR = true
+        jvmTarget = "1.8"
     }
 }
 
@@ -39,7 +38,12 @@ dependencies {
     implementation(project(":ui"))
     implementation(project(":presentation"))
     implementation(project(":presentation-impl"))
+    implementation(project(":domain"))
+    implementation(project(":domain-impl"))
+    implementation(project(":data"))
+    implementation(project(":data-impl"))
 
+    implementation("androidx.core:core-ktx:1.6.0")
     implementation("androidx.appcompat:appcompat:1.3.1")
 
     val materialVersion: String by rootProject.ext
@@ -50,4 +54,9 @@ dependencies {
     kapt("com.google.dagger:dagger-compiler:$daggerVersion")
     implementation("com.google.dagger:dagger-android:$daggerVersion")
     kapt("com.google.dagger:dagger-android-processor:$daggerVersion")
+
+    val lifecycleVersion: String by rootProject.ext
+    kapt("androidx.lifecycle:lifecycle-compiler:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
 }
