@@ -16,6 +16,5 @@ dependencies {
     implementation(project(":model"))
     implementation(project(":domain"))
 
-    val coroutinesCoreVersion: String by rootProject.extra
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCoreVersion")
 }

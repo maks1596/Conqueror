@@ -9,6 +9,5 @@ java {
 }
 
 dependencies {
-    val coroutinesCoreVersion: String by rootProject.extra
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCoreVersion")
 }

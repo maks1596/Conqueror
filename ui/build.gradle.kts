@@ -29,11 +29,9 @@ dependencies {
 
     implementation("androidx.core:core-ktx:1.6.0")
 
-    val lifecycleVersion: String by rootProject.ext
     kapt("androidx.lifecycle:lifecycle-compiler:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion")
 
-    val materialVersion: String by rootProject.ext
     implementation("com.google.android.material:material:$materialVersion")
 
     val adapterDelegateVersion = "4.3.0"
