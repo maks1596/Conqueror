@@ -1,5 +1,5 @@
 buildscript {
-    val kotlinVersion = "1.5.21"
+    val kotlinVersion = "1.4.31"
     extra["kotlinVersion"] = kotlinVersion
     extra["materialVersion"] = "1.3.0"
     extra["coroutinesCoreVersion"] = "1.5.0"
