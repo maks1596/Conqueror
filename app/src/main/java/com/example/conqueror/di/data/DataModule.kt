@@ -15,7 +15,7 @@ internal class DataModule {
     @Provides
     fun provideKingdomStateRepository(): KingdomStateRepository {
         val dataStore = PreferenceDataStoreFactory.create {
-            File("state")
+            File("state.preferences_pb")
         }
         return KingdomStateRepositoryImpl(dataStore)
     }
