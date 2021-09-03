@@ -1,16 +1,13 @@
 plugins {
     id("com.android.library")
     id("kotlin-android")
-    kotlin("kapt")
 }
 
 android {
     compileSdk = 30
-    buildToolsVersion = "30.0.3"
 
     defaultConfig {
         minSdk = 22
-        targetSdk = 30
     }
 
     buildTypes {
@@ -37,4 +34,5 @@ dependencies {
 
     val coroutinesCoreVersion: String by rootProject.extra
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCoreVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3")
 }
