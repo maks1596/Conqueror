@@ -1,5 +1,6 @@
 package com.example.conqueror.di.domain
 
+import com.example.conqueror.GameSettings
 import com.netology.data.KingdomStateRepository
 import com.netology.domain.KingdomInteractor
 import com.netology.domain.impl.KingdomInteractorImpl
@@ -11,8 +12,11 @@ internal class DomainModule {
 
     @Provides
     fun provideKingdomInteractor(
-        kingdomStateRepository: KingdomStateRepository
+        gameSettings: GameSettings,
+        kingdomStateRepository: KingdomStateRepository,
     ): KingdomInteractor = KingdomInteractorImpl(
-        kingdomStateRepository = kingdomStateRepository
+        initialBalance = gameSettings.initialBalance,
+        kingdomStateRepository = kingdomStateRepository,
+        initialPopulation = gameSettings.initialPopulation,
     )
 }

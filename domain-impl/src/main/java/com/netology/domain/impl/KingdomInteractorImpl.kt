@@ -5,19 +5,16 @@ import com.netology.domain.KingdomInteractor
 import kotlinx.coroutines.flow.map
 
 class KingdomInteractorImpl(
-    kingdomStateRepository: KingdomStateRepository
+    initialBalance: Int,
+    initialPopulation: Int,
+    kingdomStateRepository: KingdomStateRepository,
 ) : KingdomInteractor {
 
     override val balanceFlow = kingdomStateRepository.balanceFlow.map {
-        it ?: INITIAL_BALANCE
+        it ?: initialBalance
     }
 
     override val populationFlow = kingdomStateRepository.populationFlow.map {
-        it ?: INITIAL_POPULATION
-    }
-
-    private companion object {
-        private const val INITIAL_BALANCE = 100
-        private const val INITIAL_POPULATION = 10
+        it ?: initialPopulation
     }
 }
