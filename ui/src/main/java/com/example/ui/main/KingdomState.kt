@@ -38,7 +38,7 @@ internal sealed class KingdomState {
         val population: Int,
 
         /**
-         * Количество момент в казне королевства
+         * Количество монет в казне королевства
          */
         val balance: Int
     )
