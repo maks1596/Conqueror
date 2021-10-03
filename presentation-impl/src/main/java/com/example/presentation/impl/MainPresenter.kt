@@ -36,5 +36,22 @@ class MainPresenter(
                 state = state.copy(population = population)
             }
         }
+        coroutineScope.launch {
+            kingdomInteractor.getAvailableSquadsFlow(
+                MAX_DISPLAYED_AVAILABLE_SQUADS_AMOUNT
+            ).collect { availableSquads ->
+                state = state.copy(availableSquads = availableSquads)
+            }
+        }
+        coroutineScope.launch {
+            kingdomInteractor.getNextAvailableSquadFlow().collect { nextSquad ->
+                state = state.copy(nextAvailableSquad = nextSquad)
+            }
+        }
+    }
+
+    private companion object {
+
+        private const val MAX_DISPLAYED_AVAILABLE_SQUADS_AMOUNT = 5
     }
 }
