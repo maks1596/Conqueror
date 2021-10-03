@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="squad_strength_format" formatted="true">Strength: %1$d</string>
+    <string name="squad_name_format" formatted="true">%1$s-%2$s</string>
+
+    <string name="squad_race_human">Human</string>
+    <string name="squad_race_elf">Elf</string>
+    <string name="squad_race_orc">Orc</string>
+    <string name="squad_race_dwarf">Dwarf</string>
+
+    <string name="squad_specialization_melee">warrior</string>
+    <string name="squad_specialization_range">ranger</string>
+    <string name="squad_specialization_mage">magician</string>
+</resources>

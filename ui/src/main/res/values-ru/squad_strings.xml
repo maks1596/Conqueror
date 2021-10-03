@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="squad_strength_format" formatted="true">Численность: %1$d</string>
+    <string name="squad_name_format" formatted="true">%1$s-%2$s</string>
+
+    <string name="squad_race_human">Человек</string>
+    <string name="squad_race_elf">Эльф</string>
+    <string name="squad_race_orc">Орк</string>
+    <string name="squad_race_dwarf">Гном</string>
+
+    <string name="squad_specialization_melee">воин</string>
+    <string name="squad_specialization_range">лучник</string>
+    <string name="squad_specialization_mage">маг</string>
+</resources>

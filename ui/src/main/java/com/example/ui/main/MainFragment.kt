@@ -34,11 +34,23 @@ class MainFragment(
     }
 
     override fun displayState(state: MainContract.State) {
-        adapter.items = listOf(
+        adapter.items = listOfNotNull(
             KingdomState.ListItem(
                 population = state.population,
                 balance = state.balance
-            )
+            ),
+            *state.availableSquads.map { squad ->
+                Squad.ListItem(
+                    squad = squad,
+                    available = true
+                )
+            }.toTypedArray(),
+            state.nextAvailableSquad?.let {
+                Squad.ListItem(
+                    squad = it,
+                    available = false
+                )
+            }
         )
     }
 }

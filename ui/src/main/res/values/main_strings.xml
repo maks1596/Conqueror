@@ -2,6 +2,4 @@
 <resources>
     <string name="kingdom_balance_format">Money: %1$d</string>
     <string name="kingdom_population_format">Population: %1$d</string>
-
-    <string name="squad_strength_format" formatted="true">Strength: %1$d</string>
 </resources>
