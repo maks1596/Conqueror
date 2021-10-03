@@ -4,13 +4,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.DiffUtil
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.presentation.MainContract
 import com.example.ui.R
+import com.example.ui.common.AnyDiffCallback
 import com.example.ui.databinding.RecyclerViewBinding
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
-import java.util.*
 
 class MainFragment(
     private val getPresenter: (MainFragment) -> MainContract.Presenter
@@ -23,13 +22,7 @@ class MainFragment(
 
     private val adapter by lazy {
         AsyncListDifferDelegationAdapter(
-            object : DiffUtil.ItemCallback<Any>() {
-                override fun areItemsTheSame(oldItem: Any, newItem: Any) = oldItem === newItem
-
-                override fun areContentsTheSame(oldItem: Any, newItem: Any) =
-                    Objects.equals(oldItem, newItem)
-
-            },
+            AnyDiffCallback,
             KingdomState.AdapterDelegateFactory.create()
         )
     }
