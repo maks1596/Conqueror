@@ -18,7 +18,7 @@ class MainPresenter(
             population = 0,
             balance = 0,
             availableSquads = emptyList(),
-            unavailableSquads = emptyList()
+            nextAvailableSquad = null
         )
     ) { _, _, newValue ->
         view.displayState(newValue)
