@@ -9,5 +9,7 @@ java {
 }
 
 dependencies {
+    api(project(mapOf("path" to ":model")))
+
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCoreVersion")
 }
