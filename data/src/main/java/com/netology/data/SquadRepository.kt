@@ -9,6 +9,12 @@ interface SquadRepository {
 
     /**
      * Возвращает список отрядов
+     *
+     * @param amountFilter ограничиваает количество результирующих записей
+     * @param strengthFilter фильтрует отряды по полю [Squad.strength]
      */
-    fun getSquads(): List<Squad>
+    fun getSquads(
+        amountFilter: AmountFilter? = null,
+        strengthFilter: (strength: Int) -> Boolean = { true }
+    ): List<Squad>
 }
