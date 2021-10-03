@@ -17,16 +17,18 @@ class SquadRepositoryImpl(
             strength = firstSquadStrength
         )
     ) { prevSquad ->
-        val nextRace = Squad.Race.values().getOrNull(prevSquad.race.ordinal + 1)
-        if (nextRace == null) null else {
-            val nextSpecialization = Squad.Specialization.values().getOrElse(
-                prevSquad.specialization.ordinal + 1
-            ) { Squad.Specialization.Melee }
-
-            Squad(
+        val nextSquadSpecialization = prevSquad.specialization.next
+        if (nextSquadSpecialization != null) {
+            prevSquad.copy(
+                specialization = nextSquadSpecialization,
+                strength = prevSquad.countNextSquadStrength()
+            )
+        } else {
+            val nextRace = prevSquad.race.next
+            if (nextRace == null) null else Squad(
                 race = nextRace,
-                specialization = nextSpecialization,
-                strength = prevSquad.strength shl 1
+                specialization = Squad.Specialization.Melee,
+                strength = prevSquad.countNextSquadStrength()
             )
         }
     }
@@ -46,3 +48,7 @@ class SquadRepositoryImpl(
         }
     }
 }
+
+private val Squad.Race.next get() = Squad.Race.values().getOrNull(ordinal + 1)
+private val Squad.Specialization.next get() = Squad.Specialization.values().getOrNull(ordinal + 1)
+private fun Squad.countNextSquadStrength() = strength shl 1
