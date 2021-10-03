@@ -2,6 +2,8 @@ package com.netology.data.impl
 
 import com.example.model.Squad
 import com.netology.data.AmountFilter
+import com.netology.data.First
+import com.netology.data.Last
 import com.netology.data.SquadRepository
 
 class SquadRepositoryImpl(
@@ -33,6 +35,14 @@ class SquadRepositoryImpl(
         amountFilter: AmountFilter?,
         strengthFilter: (strength: Int) -> Boolean
     ): List<Squad> {
-        TODO("Not yet implemented")
+        val strengthFilteredSquads = squads.filter {
+            strengthFilter(it.strength)
+        }
+
+        return when (amountFilter) {
+            null -> strengthFilteredSquads.toList()
+            is First -> strengthFilteredSquads.take(amountFilter.amount).toList()
+            is Last -> strengthFilteredSquads.toList().takeLast(amountFilter.amount)
+        }
     }
 }
