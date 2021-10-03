@@ -22,7 +22,8 @@ class MainFragment(
     private val adapter by lazy {
         AsyncListDifferDelegationAdapter(
             AnyDiffCallback,
-            KingdomState.AdapterDelegateFactory.create()
+            KingdomState.AdapterDelegateFactory.create(),
+            Squad.AdapterDelegateFactory.create()
         )
     }
 
