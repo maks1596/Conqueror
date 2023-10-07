@@ -6,13 +6,14 @@ plugins {
 }
 
 android {
-    compileSdk = 30
+    namespace = "com.example.conqueror"
+    compileSdk = 31
     buildToolsVersion = "30.0.3"
 
     defaultConfig {
         applicationId = "com.example.conqueror"
         minSdk = 22
-        targetSdk = 30
+        targetSdk = 31
         versionCode = 1
         versionName = "1.0"
     }

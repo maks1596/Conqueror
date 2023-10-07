@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    namespace = "com.netology.data.impl"
     compileSdk = 30
 
     defaultConfig {
