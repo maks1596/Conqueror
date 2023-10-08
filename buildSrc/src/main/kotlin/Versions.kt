@@ -1,7 +1,7 @@
 import org.gradle.api.JavaVersion
 
 object Android {
-    const val COMPILE_SDK_VERSION = 30
+    const val COMPILE_SDK_VERSION = 34
     const val MIN_SDK_VERSION = 22
 
     object CompileOptions {
