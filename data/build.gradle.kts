@@ -4,8 +4,8 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = Kotlin.Java.SOURCE_COMPATIBILITY_VERSION
+    targetCompatibility = Kotlin.Java.TARGET_COMPATIBILITY_VERSION
 }
 
 dependencies {

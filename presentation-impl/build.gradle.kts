@@ -3,12 +3,12 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = Kotlin.Java.SOURCE_COMPATIBILITY_VERSION
+    targetCompatibility = Kotlin.Java.TARGET_COMPATIBILITY_VERSION
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = Android.KotlinOptions.JVM_TARGET_VERSION
 }
 
 dependencies {

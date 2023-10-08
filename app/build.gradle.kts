@@ -7,13 +7,12 @@ plugins {
 
 android {
     namespace = "com.example.conqueror"
-    compileSdk = 31
+    compileSdk = Android.COMPILE_SDK_VERSION
     buildToolsVersion = "30.0.3"
 
     defaultConfig {
         applicationId = "com.example.conqueror"
-        minSdk = 22
-        targetSdk = 31
+        minSdk = Android.MIN_SDK_VERSION
         versionCode = 1
         versionName = "1.0"
     }
@@ -26,12 +25,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = Android.CompileOptions.SOURCE_COMPATIBILITY_VERSION
+        targetCompatibility = Android.CompileOptions.TARGET_COMPATIBILITY_VERSION
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = Android.KotlinOptions.JVM_TARGET_VERSION
     }
 }
 
