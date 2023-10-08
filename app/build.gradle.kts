@@ -47,7 +47,7 @@ dependencies {
     implementation("androidx.core:core-ktx:1.6.0")
     implementation("androidx.appcompat:appcompat:1.3.1")
 
-    implementation("com.google.android.material:material:$materialVersion")
+    implementation("com.google.android.material:material:$MATERIAL_VERSION")
 
     val daggerVersion = "2.33"
     implementation("com.google.dagger:dagger:$daggerVersion")
@@ -55,7 +55,7 @@ dependencies {
     implementation("com.google.dagger:dagger-android:$daggerVersion")
     kapt("com.google.dagger:dagger-android-processor:$daggerVersion")
 
-    kapt("androidx.lifecycle:lifecycle-compiler:$lifecycleVersion")
-    implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
+    kapt("androidx.lifecycle:lifecycle-compiler:$LIFECYCLE_VERSION")
+    implementation("androidx.lifecycle:lifecycle-common-java8:$LIFECYCLE_VERSION")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$LIFECYCLE_VERSION")
 }

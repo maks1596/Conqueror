@@ -33,6 +33,6 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.3.1")
     api("androidx.datastore:datastore-preferences:1.0.0")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCoreVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$COROUTINES_CORE_VERSION")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3")
 }

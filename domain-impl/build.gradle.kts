@@ -15,5 +15,5 @@ dependencies {
     api(project(":domain"))
     api(project(":data"))
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCoreVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$COROUTINES_CORE_VERSION")
 }
