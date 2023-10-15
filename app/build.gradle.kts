@@ -8,7 +8,6 @@ plugins {
 android {
     namespace = "com.example.conqueror"
     compileSdk = Android.COMPILE_SDK_VERSION
-    buildToolsVersion = "30.0.3"
 
     defaultConfig {
         applicationId = "com.example.conqueror"
@@ -48,7 +47,7 @@ dependencies {
 
     implementation("com.google.android.material:material:$MATERIAL_VERSION")
 
-    val daggerVersion = "2.33"
+    val daggerVersion = "2.48.1"
     implementation("com.google.dagger:dagger:$daggerVersion")
     kapt("com.google.dagger:dagger-compiler:$daggerVersion")
     implementation("com.google.dagger:dagger-android:$daggerVersion")
