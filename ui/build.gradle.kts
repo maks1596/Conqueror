@@ -30,10 +30,10 @@ dependencies {
 
     implementation("androidx.core:core-ktx:1.6.0")
 
-    kapt("androidx.lifecycle:lifecycle-compiler:$LIFECYCLE_VERSION")
-    implementation("androidx.lifecycle:lifecycle-common-java8:$LIFECYCLE_VERSION")
+    kapt(libs.androidx.lifecycle.compiler)
+    implementation(libs.androidx.lifecycle.common)
 
-    implementation("com.google.android.material:material:$MATERIAL_VERSION")
+    implementation(libs.android.material)
 
     val adapterDelegateVersion = "4.3.0"
     implementation("com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapterDelegateVersion")

@@ -11,5 +11,5 @@ java {
 dependencies {
     api(project(":model"))
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$COROUTINES_CORE_VERSION")
+    implementation(libs.kotlinx.coroutines.core)
 }

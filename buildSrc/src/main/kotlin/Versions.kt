@@ -20,7 +20,3 @@ object Kotlin {
         val TARGET_COMPATIBILITY_VERSION = SOURCE_COMPATIBILITY_VERSION
     }
 }
-
-const val MATERIAL_VERSION = "1.3.0"
-const val COROUTINES_CORE_VERSION = "1.5.0"
-const val LIFECYCLE_VERSION = "2.3.1"
