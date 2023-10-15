@@ -11,7 +11,7 @@ import ru.conqueror.ui.MainActivity
 internal class App : Application() {
 
     private val component by lazy {
-        DaggerAppComponent.factory().create()
+        DaggerAppComponent.factory().create(this)
     }
 
     override fun onCreate() {

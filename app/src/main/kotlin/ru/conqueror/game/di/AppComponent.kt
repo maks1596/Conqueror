@@ -1,5 +1,7 @@
 package ru.conqueror.game.di
 
+import android.app.Application
+import dagger.BindsInstance
 import dagger.Component
 import ru.conqueror.game.di.data.DataModule
 import ru.conqueror.game.di.domain.DomainModule
@@ -21,6 +23,8 @@ internal interface AppComponent {
     @Component.Factory
     interface Factory {
 
-        fun create(): AppComponent
+        fun create(
+            @BindsInstance application: Application
+        ): AppComponent
     }
 }

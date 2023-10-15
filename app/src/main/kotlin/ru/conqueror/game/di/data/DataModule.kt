@@ -1,6 +1,8 @@
 package ru.conqueror.game.di.data
 
+import android.app.Application
 import androidx.datastore.preferences.core.PreferenceDataStoreFactory
+import androidx.datastore.preferences.preferencesDataStoreFile
 import dagger.Module
 import dagger.Provides
 import ru.conqueror.data.KingdomStateRepository
@@ -9,16 +11,17 @@ import ru.conqueror.data.impl.KingdomStateRepositoryImpl
 import ru.conqueror.data.impl.SquadRepositoryImpl
 import ru.conqueror.game.GameSettings
 import ru.conqueror.game.di.scope.AppScope
-import java.io.File
 
 @Module
 internal class DataModule {
 
     @AppScope
     @Provides
-    fun provideKingdomStateRepository(): KingdomStateRepository {
+    fun provideKingdomStateRepository(
+        application: Application
+    ): KingdomStateRepository {
         val dataStore = PreferenceDataStoreFactory.create {
-            File("state.preferences_pb")
+            application.preferencesDataStoreFile("state")
         }
         return KingdomStateRepositoryImpl(dataStore)
     }
@@ -27,7 +30,7 @@ internal class DataModule {
     @Provides
     fun provideSquadRepository(
         gameSettings: GameSettings
-    ) : SquadRepository = SquadRepositoryImpl(
+    ): SquadRepository = SquadRepositoryImpl(
         firstSquadStrength = gameSettings.firstSquadStrength
     )
 }
