@@ -1,13 +1,41 @@
 [versions]
-material = "1.3.0"
-corountines-core = "1.5.0"
+androidx-appcompat = "1.3.1"
+androidx-core-ktx = "1.6.0"
+androidx-datastore-preferences = "1.0.0"
 androidx-lifecycle = "2.3.1"
+androidx-navigation = "2.3.3"
+
+kotlinx-coroutines-android = "1.4.3"
+kotlinx-corountines-core = "1.5.0"
+
+material = "1.3.0"
+dagger = "2.48.1"
+
+adapterDelegate = "4.3.0"
+viewbindingpropertydelegate = "1.5.0-beta01"
 
 [libraries]
-android-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "androidx-datastore-preferences" }
 
 androidx-lifecycle-common = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-compiler = { group = "androidx.lifecycle", name = "lifecycle-compiler", version.ref = "androidx-lifecycle" }
 
-kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "corountines-core" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name="navigation-fragment-ktx", version.ref = "androidx-navigation" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name="navigation-ui-ktx", version.ref = "androidx-navigation" }
+
+dagger = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
+dagger-android = { group = "com.google.dagger", name = "dagger-android", version.ref = "dagger" }
+dagger-android-processor = { group = "com.google.dagger", name = "dagger-android-processor", version.ref = "dagger" }
+dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
+
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines-android" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-corountines-core" }
+
+adapterdelegates4-kotlin-dsl = { group = "com.hannesdorfmann", name="adapterdelegates4-kotlin-dsl", version.ref = "adapterDelegate" }
+adapterdelegates4-kotlin-dsl-viewbinding = { group = "com.hannesdorfmann", name="adapterdelegates4-kotlin-dsl-viewbinding", version.ref = "adapterDelegate" }
+viewbindingpropertydelegate-noreflection = { group = "com.github.kirich1409", name="viewbindingpropertydelegate-noreflection", version.ref = "viewbindingpropertydelegate" }

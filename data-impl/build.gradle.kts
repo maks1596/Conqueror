@@ -29,10 +29,10 @@ android {
 dependencies {
     api(project(":data"))
 
-    implementation("androidx.core:core-ktx:1.6.0")
-    implementation("androidx.appcompat:appcompat:1.3.1")
-    api("androidx.datastore:datastore-preferences:1.0.0")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    api(libs.androidx.datastore.preferences)
 
     implementation(libs.kotlinx.coroutines.core)
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3")
+    implementation(libs.kotlinx.coroutines.android)
 }

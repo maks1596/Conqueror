@@ -28,20 +28,18 @@ dependencies {
     implementation(project(":model"))
     implementation(project(":presentation"))
 
-    implementation("androidx.core:core-ktx:1.6.0")
+    implementation(libs.androidx.core.ktx)
 
     kapt(libs.androidx.lifecycle.compiler)
     implementation(libs.androidx.lifecycle.common)
 
-    implementation(libs.android.material)
+    implementation(libs.material)
 
-    val adapterDelegateVersion = "4.3.0"
-    implementation("com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapterDelegateVersion")
-    implementation("com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapterDelegateVersion")
+    implementation(libs.adapterdelegates4.kotlin.dsl)
+    implementation(libs.adapterdelegates4.kotlin.dsl.viewbinding)
 
-    val navVersion = "2.3.3"
-    implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
-    implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
-    implementation("com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.0-beta01")
+    implementation(libs.viewbindingpropertydelegate.noreflection)
 }
