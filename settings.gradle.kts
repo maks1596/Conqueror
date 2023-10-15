@@ -14,8 +14,8 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Conqueror"
-include(":app", ":ui", ":presentation", ":presentation-impl", ":model")
-include(":data")
-include(":data-impl")
-include(":domain")
-include(":domain-impl")
+include(":app")
+include(":presentation:ui", ":presentation:view-model")
+include(":model")
+include(":data", ":data-impl")
+include(":domain", ":domain-impl")

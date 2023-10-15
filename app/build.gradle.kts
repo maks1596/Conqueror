@@ -34,9 +34,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":ui"))
-    implementation(project(":presentation"))
-    implementation(project(":presentation-impl"))
+    implementation(project(":presentation:ui"))
+    implementation(project(":presentation:view-model"))
     implementation(project(":domain"))
     implementation(project(":domain-impl"))
     implementation(project(":data"))

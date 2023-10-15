@@ -26,7 +26,7 @@ android {
 
 dependencies {
     implementation(project(":model"))
-    implementation(project(":presentation"))
+    implementation(project(":presentation:view-model"))
 
     implementation(libs.androidx.core.ktx)
 

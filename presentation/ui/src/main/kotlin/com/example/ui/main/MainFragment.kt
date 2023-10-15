@@ -3,19 +3,24 @@ package com.example.ui.main
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.example.presentation.MainContract
 import com.example.ui.R
 import com.example.ui.common.AnyDiffCallback
 import com.example.ui.databinding.RecyclerViewBinding
+import com.example.viewModel.MainState
+import com.example.viewModel.MainViewModel
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
+import kotlinx.coroutines.launch
 
 class MainFragment(
-    private val getPresenter: (MainFragment) -> MainContract.Presenter
-) : Fragment(R.layout.recycler_view),
-    MainContract.View {
+    private val viewModelFactory: ViewModelProvider.Factory
+) : Fragment(R.layout.recycler_view) {
 
-    private val presenter get() = getPresenter(this)
+    private val viewModel: MainViewModel by viewModels { viewModelFactory }
 
     private val binding by viewBinding(RecyclerViewBinding::bind)
 
@@ -31,10 +36,15 @@ class MainFragment(
         super.onViewCreated(view, savedInstanceState)
 
         binding.recyclerView.adapter = adapter
-        presenter.onViewCreated()
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.stateFlow
+                .flowWithLifecycle(viewLifecycleOwner.lifecycle)
+                .collect(::onStateChanged)
+        }
     }
 
-    override fun displayState(state: MainContract.State) {
+    private fun onStateChanged(state: MainState) {
         adapter.items = listOfNotNull(
             KingdomState.ListItem(
                 population = state.population,
