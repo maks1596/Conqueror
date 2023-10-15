@@ -21,7 +21,6 @@ object Kotlin {
     }
 }
 
-const val KOTLIN_VERSION = "1.5.20"
 const val MATERIAL_VERSION = "1.3.0"
 const val COROUTINES_CORE_VERSION = "1.5.0"
 const val LIFECYCLE_VERSION = "2.3.1"
