@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.viewModel"
+    namespace = "ru.conqueror.viewModel"
     compileSdk = Android.COMPILE_SDK_VERSION
     defaultConfig {
         minSdk = Android.MIN_SDK_VERSION

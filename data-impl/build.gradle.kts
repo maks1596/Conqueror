@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.netology.data.impl"
+    namespace = "ru.conqueror.data.impl"
     compileSdk = Android.COMPILE_SDK_VERSION
 
     defaultConfig {

@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.ui"
+    namespace = "ru.conqueror.ui"
     compileSdk = Android.COMPILE_SDK_VERSION
     defaultConfig {
         minSdk = Android.MIN_SDK_VERSION

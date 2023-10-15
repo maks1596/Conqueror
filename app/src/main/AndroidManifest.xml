@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Conqueror">
 
         <activity
-            android:name="com.example.ui.MainActivity"
+            android:name="ru.conqueror.ui.MainActivity"
             android:exported="true">
 
             <intent-filter>

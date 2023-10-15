@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.conqueror"
+    namespace = "ru.conqueror.game"
     compileSdk = Android.COMPILE_SDK_VERSION
 
     defaultConfig {
-        applicationId = "com.example.conqueror"
+        applicationId = "ru.conqueror.game"
         minSdk = Android.MIN_SDK_VERSION
         versionCode = 1
         versionName = "1.0"
