@@ -47,6 +47,12 @@ class MainViewModel(
         }
     }
 
+    fun onAddPeopleButtonClicked() {
+        viewModelScope.launch {
+            kingdomInteractor.addPeople()
+        }
+    }
+
     private companion object {
 
         private const val MAX_DISPLAYED_AVAILABLE_SQUADS_AMOUNT = 5

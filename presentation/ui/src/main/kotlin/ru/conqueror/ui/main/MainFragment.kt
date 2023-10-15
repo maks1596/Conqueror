@@ -12,17 +12,17 @@ import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import kotlinx.coroutines.launch
 import ru.conqueror.ui.R
 import ru.conqueror.ui.common.AnyDiffCallback
-import ru.conqueror.ui.databinding.RecyclerViewBinding
+import ru.conqueror.ui.databinding.MainFragmentBinding
 import ru.conqueror.viewModel.MainState
 import ru.conqueror.viewModel.MainViewModel
 
 class MainFragment(
     private val viewModelFactory: ViewModelProvider.Factory
-) : Fragment(R.layout.recycler_view) {
+) : Fragment(R.layout.main_fragment) {
 
     private val viewModel: MainViewModel by viewModels { viewModelFactory }
 
-    private val binding by viewBinding(RecyclerViewBinding::bind)
+    private val binding by viewBinding(MainFragmentBinding::bind)
 
     private val adapter by lazy {
         AsyncListDifferDelegationAdapter(
@@ -35,7 +35,10 @@ class MainFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.recyclerView.adapter = adapter
+        binding.recyclerView.root.adapter = adapter
+        binding.addPeopleButton.setOnClickListener {
+            viewModel.onAddPeopleButtonClicked()
+        }
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.stateFlow

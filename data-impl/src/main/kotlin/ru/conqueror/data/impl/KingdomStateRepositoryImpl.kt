@@ -22,6 +22,13 @@ class KingdomStateRepositoryImpl(
         dataStore.edit { it[POPULATION_KEY] = population }
     }
 
+    override suspend fun update(balance: Int, population: Int) {
+        dataStore.edit {
+            it[BALANCE_KEY] = balance
+            it[POPULATION_KEY] = population
+        }
+    }
+
     private companion object {
         private val BALANCE_KEY = intPreferencesKey("balance")
         private val POPULATION_KEY = intPreferencesKey("population")

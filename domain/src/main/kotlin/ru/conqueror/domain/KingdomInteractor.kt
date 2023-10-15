@@ -28,4 +28,9 @@ interface KingdomInteractor {
      * `null` в случае, если больше не осталось неоткрытых отрядов
      */
     fun getNextAvailableSquadFlow(): Flow<Squad?>
+
+    /**
+     * Добавляет людей в королевство в обмен на золото
+     */
+    suspend fun addPeople()
 }

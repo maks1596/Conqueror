@@ -28,4 +28,9 @@ interface KingdomStateRepository {
      * Устанавливает количество людей в королевстве равным [population]
      */
     suspend fun updatePopulation(population: Int)
+
+    /**
+     * Устанавливает новые значения [balance] и [population]
+     */
+    suspend fun update(balance: Int, population: Int)
 }
