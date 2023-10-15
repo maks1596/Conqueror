@@ -3,7 +3,6 @@ package com.example.presentation.impl
 import com.example.presentation.MainContract
 import com.netology.domain.KingdomInteractor
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlin.properties.Delegates
 

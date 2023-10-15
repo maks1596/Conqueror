@@ -1,7 +1,7 @@
 package com.example.ui.common
 
 import androidx.recyclerview.widget.DiffUtil
-import java.util.*
+import java.util.Objects
 
 internal object AnyDiffCallback : DiffUtil.ItemCallback<Any>() {
 
